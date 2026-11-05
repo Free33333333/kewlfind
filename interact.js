@@ -1,8 +1,8 @@
 const pic = document.getElementById("meisho");
-const sound = new Audio("awawawawa_meisho_doto.mp3");
+const video = document.getElementById("rick");
 
 pic.addEventListener("click", () => {
-    pic.width = 400;
-    pic.height = 400;
-    sound.play();
+    pic.style.display = "none";
+    video.style.display = "block";
+    video.play();
 });
