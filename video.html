@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website - My Video</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a class="logo" href="index.html">★ My Website</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="active" href="video.html">My Video</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="page-title">My Video</h1>
+    <p>Enjoy. There is no escape.</p><br>
+
+    <div class="video-wrap">
+      <!-- autoplay = starts by itself
+           loop     = repeats forever
+           no "controls" = no play bar, no mute button, no slider
+           pointer-events: none = clicking the video does nothing -->
+      <video id="joke-video" autoplay loop playsinline
+             disablepictureinpicture
+             style="pointer-events: none;">
+        <source src="agnest.mp4" type="video/mp4">
+      </video>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 My Website. Made for fun and learning.</p>
+  </footer>
+
+  <script>
+    const video = document.getElementById("joke-video");
+
+    // Browsers sometimes block autoplay with sound.
+    // If that happens, start the video on the first click or key press.
+    video.play().catch(function () {
+      document.addEventListener("click", function () { video.play(); }, { once: true });
+      document.addEventListener("keydown", function () { video.play(); }, { once: true });
+    });
+
+    // If it ever gets paused, start it again.
+    video.addEventListener("pause", function () { video.play(); });
+
+    // Keep the volume locked on (unmuted, full).
+    video.addEventListener("volumechange", function () {
+      video.muted = false;
+      video.volume = 1;
+    });
+
+    // Disable the right-click menu so there's no "Show controls" option.
+    video.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+    document.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+  </script>
+
+</body>
+</html>

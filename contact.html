@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website - Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a class="logo" href="index.html">★ My Website</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="contact.html">Contact</a></li>
+        <li><a href="video.html">My Video</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="page-title">Contact Info</h1>
+
+    <div class="contact-box">
+      <ul>
+        <li><strong>Name:</strong> Your Name</li>
+        <li><strong>Email:</strong> <a href="mailto:you@example.com">you@example.com</a></li>
+        <li><strong>Phone:</strong> 0900-000-0000</li>
+        <li><strong>Location:</strong> Davao City, Philippines</li>
+        <li><strong>Social:</strong> <a href="#">@yourusername</a></li>
+      </ul>
+
+      <!-- This form is just for looks. It doesn't send anything yet
+           (that needs a backend or a service like Formspree). -->
+      <form>
+        <label for="name">Your name</label>
+        <input type="text" id="name" placeholder="Type your name">
+
+        <label for="email">Your email</label>
+        <input type="email" id="email" placeholder="you@example.com">
+
+        <label for="msg">Message</label>
+        <textarea id="msg" rows="5" placeholder="Write something..."></textarea>
+
+        <button class="btn" type="button">Send</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 My Website. Made for fun and learning.</p>
+  </footer>
+
+</body>
+</html>
